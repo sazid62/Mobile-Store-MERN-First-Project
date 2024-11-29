@@ -13,7 +13,7 @@ const app = express();
 const __dirname = path.resolve();
 const PORT = process.env.PORT || 5000;
 app.use(express.json());
-app.use("/products", productsRoutes);
+app.use("/api/products", productsRoutes);
 
 if(process.env.NODE_ENV === "production"){
     app.use(express.static(path.join(__dirname, "/fronted/dist")));
