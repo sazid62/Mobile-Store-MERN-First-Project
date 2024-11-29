@@ -5,16 +5,24 @@ import { useProductsStore } from "@/store/products";
 import { useEffect, useState } from "react";
 
 export default function Home() {
+  console.log("Home Loaded");
   const { products, importProducts, deleteProduct, updateProduct } = useProductsStore();
   const [editProduct, setEditProduct] = useState(null);
   const [editForm, setEditForm] = useState({
     name: "",
-    price: "",
+    price: "", 
     image: ""
   });
-
+  console.log("products = ", products);
   useEffect(() => {
-    importProducts();
+    const fetchProducts = async () => {
+      try {
+        await importProducts();
+      } catch (error) {
+        console.error("Error fetching products:", error);
+      }
+    };
+    fetchProducts();
   }, []);
 
   useEffect(() => {
@@ -28,15 +36,36 @@ export default function Home() {
   }, [editProduct]);
 
   const handleEditSubmit = async () => {
-    const res = await updateProduct(editProduct._id, editForm);
-    console.log("res = ", res);
-    if (res.success) {
-      await importProducts(); // Refresh products after successful edit
-      setEditProduct(null);
+    try {
+      const res = await updateProduct(editProduct._id, editForm);
+      console.log("res = ", res);
+      if (res.success) {
+        await importProducts(); // Refresh products after successful edit
+        setEditProduct(null);
+      }
+    } catch (error) {
+      console.error("Error updating product:", error);
     }
   };
 
-  if (products.length === 0) {
+  // Add loading state while products are being fetched
+  const [isLoading, setIsLoading] = useState(true);
+
+  useEffect(() => {
+    if (products) {
+      setIsLoading(false);
+    }
+  }, [products]);
+
+  if (isLoading) {
+    return (
+      <div className="min-h-screen flex items-center justify-center">
+        <p>Loading products...</p>
+      </div>
+    );
+  }
+
+  if (!products || products.length === 0) {
     return (
       <div className="min-h-screen flex flex-col items-center justify-center p-4">
         <img 

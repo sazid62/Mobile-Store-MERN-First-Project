@@ -15,7 +15,8 @@ export default function App() {
         <Navbar />
         <Routes>
           <Route path="/toast" element={<ToastSimple />} />
-          <Route path="/" element={<Home />} />
+          
+          <Route path="/" element={<Home/>} />
           <Route path="/create" element={
             <div className="bg-white dark:bg-gray-900">
               <CreatePages />

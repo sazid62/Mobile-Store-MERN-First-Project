@@ -10,6 +10,7 @@ import { Button } from "@/components/ui/button"
 import { Toaster } from "@/components/ui/toaster"
 
 export default function CreatePage() {
+  console.log("CreatePage Loaded");
   const navigate = useNavigate();
   const { toast } = useToast();
   const [formData, setFormData] = useState({
@@ -23,6 +24,7 @@ export default function CreatePage() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     const res = await createProduct(formData);
+
     if (res.success) {
       toast({
         title: (
