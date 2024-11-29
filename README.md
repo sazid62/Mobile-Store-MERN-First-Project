@@ -1,7 +1,7 @@
-# Project Name: My MERN Project
+# Mobile Store MERN Project
 
 ## Description
-This is a full-stack MERN (MongoDB, Express, React, Node.js) application. It provides a platform for users to [describe the functionality briefly].
+This is a full-stack MERN (MongoDB, Express, React, Node.js) application for a mobile store. Users can browse, purchase, and manage mobile phones through a user-friendly interface. The backend handles user authentication, product listings, and orders, while the frontend provides an interactive and responsive experience.
 
 ## Table of Contents
 - [Installation](#installation)
@@ -14,74 +14,57 @@ This is a full-stack MERN (MongoDB, Express, React, Node.js) application. It pro
 
 ### Prerequisites:
 Ensure you have the following installed on your local machine:
-- [Node.js](https://nodejs.org/) (Version: 14 or higher)
-- [MongoDB](https://www.mongodb.com/try/download/community) (If you're running MongoDB locally, or you can use a cloud database like MongoDB Atlas)
+- [Node.js](https://nodejs.org/en/) (Version: 14 or higher)
+- [MongoDB](https://www.mongodb.com/try/download/community) (or use MongoDB Atlas)
 
-### Steps to install:
+### Steps to Install:
 
 1. Clone the repository:
     ```bash
-    git clone https://github.com/your-username/your-repository-name.git
+    gh repo clone sazid62/Mobile-Store-MERN-First-Project
     ```
 
 2. Navigate to the project directory:
     ```bash
-    cd your-repository-name
+    cd Mobile-Store-MERN-First-Project
     ```
 
-3. Install dependencies for both the backend and frontend:
+3. Install dependencies for both frontend and backend:
+    ```bash
+    npm run build
+    ```
+   This will install both frontend and backend Node dependencies.
 
-    - Install backend dependencies (Node.js, Express, MongoDB):
-      ```bash
-      cd backend
-      npm install
-      ```
-
-    - Install frontend dependencies (React):
-      ```bash
-      cd ../frontend
-      npm install
-      ```
-
-4. **Create environment variables**:
-   - In the `backend` folder, create a `.env` file for environment variables (like your MongoDB URI and API keys).
-
-    Example:
+4. Create a `.env` file in the root of the `Mobile-Store-MERN-First-Project` folder and add the following environment variables:
     ```text
-    MONGO_URI=mongodb://localhost:27017/your-database
-    JWT_SECRET=your_secret_key
+    MONGO_URI=your_mongodb_connection_string
+    PORT=3000
     ```
 
 5. Run the application:
-
-    - **Backend** (Node.js + Express):
-      ```bash
-      cd backend
-      npm start
-      ```
-
-    - **Frontend** (React):
-      ```bash
-      cd frontend
-      npm start
-      ```
-
-   This will start the application at `http://localhost:3000` for the frontend and `http://localhost:5000` for the backend.
+    ```bash
+    npm run start
+    ```
+   This will start the app and you can access it at `http://localhost:3000`.
 
 ## Usage
-- After installation, you can navigate to `http://localhost:3000` to access the frontend and interact with your MERN application.
-- [Add more usage instructions here as per your app's features.]
+Once the application is running, visit `http://localhost:3000` to access the mobile store.
+
+- Browse the mobile products.
+- Add items to the cart.
+- Proceed to checkout to make a purchase.
 
 ## Contributing
-1. Fork the repository
-2. Create a new branch (`git checkout -b feature-branch`)
-3. Commit your changes (`git commit -am 'Add new feature'`)
-4. Push to the branch (`git push origin feature-branch`)
-5. Open a pull request
+1. Fork the repository.
+2. Create a new branch (`git checkout -b feature-branch`).
+3. Commit your changes (`git commit -am 'Add new feature'`).
+4. Push to the branch (`git push origin feature-branch`).
+5. Open a pull request.
 
 ## License
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
 ## Contact
-- Created by [Your Name](https://github.com/your-username)
-- Email: your-email@example.com
+- **Created by**: Easar Mostafa Sajid
+- **Email**: [sajidurrahman3s2@gmail.com](mailto:sajidurrahman3s2@gmail.com)
+- **GitHub**: [https://github.com/sazid62](https://github.com/sazid62)
